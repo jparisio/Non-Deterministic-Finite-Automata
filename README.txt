@@ -30,3 +30,11 @@ q3                         -accept state is q3
 q1 1 q2                 -transition 1, if state q1 is active and input 1, new state is q2
 q2 e q3                 -transition 2, an epsilon transition leading from q2 to q3
 q1 0 q1                 -transition 3, if state q1 is active and input 0, new state is q1
+
+Example Ouput:
+The above output means:
+
+0    1 0        -the input 0 with the starting state q1 leaves state q1 active and q2 not active
+1    0 1        -the input 1 with the above states leads to state q1 being inactive and q2 being active
+0    1 0        -the input 0 with the above state leads to state q1 being active and q2 being inactive
+reject          -after the last input string, only q1 is active, the accept state is q2 is not active so print reject
